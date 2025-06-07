@@ -56,6 +56,8 @@ int main() {
     texture = SDL_CreateTextureFromSurface(renderer, surface);
     SDL_FreeSurface(surface);
 
+    SDL_SetTextureColorMod(texture, rand() % 255, rand() % 255, rand() % 255);
+
     SDL_Rect display_bounds;
     if (SDL_GetDisplayBounds(0, &display_bounds) == 0) {
         display_width = display_bounds.w;
