@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -O2 $(shell pkg-config --cflags sdl2 SDL2_image)
 LDFLAGS = $(shell pkg-config --libs sdl2 SDL2_image)
-SRC = main.c
+SRC = src/main.c
 OUT = dvd
 
 all: $(OUT)
