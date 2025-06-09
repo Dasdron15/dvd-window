@@ -3,12 +3,11 @@
 #include <time.h>
 
 #ifdef _WIN32
-#include <SDL/SDL.h>
-#include <SDL/SDL_image.h>
-#else
+#define SDL_MAIN_HANDLED
+#endif
+
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
-#endif
 
 #define WINDOW_WIDTH 256
 #define WINDOW_HEIGHT 152
@@ -17,6 +16,8 @@
 int quit = 0;
 int display_width = 0;
 int display_height = 0;
+
+int win_x, win_y;
 float vx = 0.4 * SPEED, vy = 0.3 * SPEED;
 
 SDL_Window *window = NULL;
@@ -27,7 +28,7 @@ SDL_Texture *texture = NULL;
 void move(void);
 void clean(void);
 
-int main() {
+int main(int argc, char* argv[]) {
     srand(time(0));
 
     vx = (rand() % 2 == 0) ? -vx : vx;
@@ -87,8 +88,6 @@ int main() {
 }
 
 void move(void) {
-    int win_x, win_y;
-
     SDL_GetWindowPosition(window, &win_x, &win_y);
 
     win_x += vx;
