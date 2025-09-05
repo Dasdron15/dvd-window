@@ -1,5 +1,5 @@
 # DVD Window
-Simple program that creates a window bouncing off the edges of the screen, mimicking the classic DVD screesaver.
+Simple program that creates a window bouncing off the edges of the screen, mimicking the DVD screesaver.
 
 ## Building the project
 
