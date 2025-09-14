@@ -46,6 +46,9 @@ int main(int argc, char* argv[]) {
                               WINDOW_HEIGHT,
                               0);
 
+
+    SDL_SetWindowAlwaysOnTop(window, SDL_TRUE);
+
     if (window == NULL) {
         fprintf(stderr, "Failed to create window: %s\n", SDL_GetError());
         return 1;
